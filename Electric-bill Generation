@@ -1,0 +1,24 @@
+def calculateBill(units):
+    if (units<0):
+        units="Entered Unit is wrong"
+        return units
+    elif (units<=100):
+        return units*13;
+    elif (units<=200):
+        bill= ((100*13) +(units-100) *15);
+        tax=bill*(2/100)
+        total=bill+tax
+        return total 
+    elif (units<=500):
+        bill= ((100*10) +(100*15) +(units-200) *17);
+        tax=bill*(5/100)
+        total=bill+tax
+        return total 
+    elif (units>500):
+        bill=((100*10) +(100*15) +(300*17) +(units-500) *20);
+        tax=bill*(7/100)
+        total=bill+tax 
+        return total
+    # Driver Code
+units=int(input("Enter the unit Cansumed ="))
+print("Gross Total Bill =",calculateBill(units));
